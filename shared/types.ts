@@ -1,61 +1,38 @@
-export interface Task {
+// Authentication Types
+export interface User {
   id: string;
-  title: string;
-  description?: string;
-  completed: boolean;
-  priority: 'low' | 'medium' | 'high';
-  tags: string[];
-  category?: string;
-  dueDate?: Date;
-  createdAt: Date;
-  updatedAt: Date;
-  subtasks: Subtask[];
-  order: number;
+  email: string;
+  name: string;
+  avatar?: string;
+  createdAt: string;
+  preferences?: {
+    theme: 'light' | 'dark';
+    notifications: boolean;
+  };
 }
 
-export interface Subtask {
-  id: string;
-  taskId: string;
-  title: string;
-  completed: boolean;
-  createdAt: Date;
-  order: number;
+export interface SignInRequest {
+  email: string;
+  password: string;
+  rememberMe?: boolean;
 }
 
-export interface CreateTaskRequest {
-  title: string;
-  description?: string;
-  priority: 'low' | 'medium' | 'high';
-  tags: string[];
-  category?: string;
-  dueDate?: Date;
+export interface SignUpRequest {
+  name: string;
+  email: string;
+  password: string;
 }
 
-export interface UpdateTaskRequest extends Partial<CreateTaskRequest> {
-  completed?: boolean;
-  order?: number;
-}
-
-export interface TaskFilters {
-  search?: string;
-  status?: 'all' | 'completed' | 'pending';
-  priority?: 'low' | 'medium' | 'high';
-  category?: string;
-  tags?: string[];
-}
-
-export interface TaskSort {
-  field: 'title' | 'createdAt' | 'dueDate' | 'priority' | 'order';
-  direction: 'asc' | 'desc';
+export interface AuthResponse {
+  user: User;
+  token: string;
+  refreshToken?: string;
 }
 
 export type ThemeMode = 'light' | 'dark';
 
-export interface AppState {
-  tasks: Task[];
-  filters: TaskFilters;
-  sort: TaskSort;
-  loading: boolean;
-  error: string | null;
-  theme: ThemeMode;
+export interface ApiError {
+  message: string;
+  code?: string;
+  details?: any;
 }
