@@ -1,0 +1,444 @@
+/* Import Notion's Inter font first */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Import custom styles */
+@import './styles/main.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Notion-Inspired Design System Variables
+   * Clean, minimal, and professional aesthetic
+   */
+  :root {
+    /* Tailwind compatibility - HSL values */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 9%;
+    --radius: 3px;
+
+    /* Notion Color Palette */
+    --notion-white: #ffffff;
+    --notion-gray-10: #fafafa;
+    --notion-gray-20: #f5f5f5;
+    --notion-gray-30: #eeeeee;
+    --notion-gray-40: #e0e0e0;
+    --notion-gray-50: #bdbdbd;
+    --notion-gray-60: #9e9e9e;
+    --notion-gray-70: #757575;
+    --notion-gray-80: #424242;
+    --notion-gray-90: #212121;
+    --notion-black: #000000;
+
+    /* Notion Accent Colors */
+    --notion-blue: #2ea7e0;
+    --notion-blue-light: #b4e7ff;
+    --notion-purple: #9065b0;
+    --notion-purple-light: #e5d5ff;
+    --notion-pink: #e255a1;
+    --notion-pink-light: #ffd5e5;
+    --notion-red: #ff5757;
+    --notion-red-light: #ffe5e5;
+    --notion-orange: #ff8c42;
+    --notion-orange-light: #ffe5cc;
+    --notion-yellow: #ffb84d;
+    --notion-yellow-light: #fff2cc;
+    --notion-green: #8cc152;
+    --notion-green-light: #e5f5cc;
+
+    /* Main Color Variables */
+    --primary-color: var(--notion-black);
+    --primary-hover: var(--notion-gray-80);
+    --primary-light: var(--notion-blue);
+    --secondary-color: var(--notion-gray-60);
+    --success-color: var(--notion-green);
+    --warning-color: var(--notion-orange);
+    --danger-color: var(--notion-red);
+    --accent-color: var(--notion-blue);
+    
+    /* Background Colors */
+    --background-color: var(--notion-white);
+    --surface-color: var(--notion-gray-10);
+    --card-background: var(--notion-white);
+    
+    /* Text Colors */
+    --text-primary: var(--notion-gray-90);
+    --text-secondary: var(--notion-gray-70);
+    --text-tertiary: var(--notion-gray-60);
+    
+    /* Border Colors */
+    --border-color: var(--notion-gray-30);
+    --border-hover: var(--notion-gray-40);
+
+    /* Shadows - Notion uses very subtle shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.08);
+    --shadow-xl: 0 8px 16px rgba(0, 0, 0, 0.10);
+
+    /* Typography - Notion uses Inter font */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+
+    /* Spacing - Notion uses 4px base unit */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-10: 40px;
+    --space-12: 48px;
+    --space-16: 64px;
+
+    /* Border Radius - Notion uses minimal rounded corners */
+    --radius-sm: 3px;
+    --radius-md: 4px;
+    --radius-lg: 6px;
+    --radius-xl: 8px;
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.2s ease;
+    --transition-slow: 0.3s ease;
+  }
+
+  /* Dark theme - Notion's dark mode */
+  [data-theme="dark"] {
+    /* Tailwind compatibility */
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 63%;
+    --accent: 0 0% 14%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62% 47%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+    --ring: 0 0% 83%;
+
+    /* Dark theme Notion colors */
+    --notion-white: #191919;
+    --notion-gray-10: #1f1f1f;
+    --notion-gray-20: #2a2a2a;
+    --notion-gray-30: #373737;
+    --notion-gray-40: #4a4a4a;
+    --notion-gray-50: #6a6a6a;
+    --notion-gray-60: #9b9b9b;
+    --notion-gray-70: #c9c9c9;
+    --notion-gray-80: #e3e3e3;
+    --notion-gray-90: #f7f7f7;
+    --notion-black: #ffffff;
+
+    /* Update color variables for dark mode */
+    --primary-color: var(--notion-black);
+    --primary-hover: var(--notion-gray-80);
+    --background-color: var(--notion-white);
+    --surface-color: var(--notion-gray-10);
+    --card-background: var(--notion-gray-20);
+    --text-primary: var(--notion-gray-90);
+    --text-secondary: var(--notion-gray-70);
+    --text-tertiary: var(--notion-gray-60);
+    --border-color: var(--notion-gray-30);
+    --border-hover: var(--notion-gray-40);
+  }
+
+  /* Base styles with Notion aesthetics */
+  * {
+    @apply border-border;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-family);
+    line-height: 1.5;
+    letter-spacing: -0.011em;
+    font-weight: 400;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    transition: background-color var(--transition-normal), color var(--transition-normal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Enhanced Typography - Notion style */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--text-primary);
+    letter-spacing: -0.022em;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.022em;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.019em;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.016em;
+  }
+
+  h5 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: -0.014em;
+  }
+
+  h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.011em;
+  }
+
+  p {
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  /* Focus styles for accessibility - Notion style */
+  :focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 1px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Selection styles - Notion style */
+  ::selection {
+    background: rgba(46, 167, 224, 0.2);
+    color: inherit;
+  }
+
+  /* Scrollbar styles - Notion style thin scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--notion-gray-40);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--notion-gray-50);
+  }
+
+  /* Firefox scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--notion-gray-40) transparent;
+  }
+
+  /* Input and form element resets */
+  input, textarea, select, button {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+  }
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Link styles */
+  a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  a:hover {
+    opacity: 0.8;
+  }
+
+  /* Code styles - Notion monospace */
+  code, pre {
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    background: var(--surface-color);
+    padding: 0.125em 0.25em;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+  }
+
+  pre {
+    padding: 1rem;
+    overflow-x: auto;
+    white-space: pre;
+  }
+
+  /* Table styles */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    text-align: left;
+    padding: var(--space-3);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  th {
+    font-weight: 600;
+    color: var(--text-primary);
+    background: var(--surface-color);
+  }
+
+  /* HR styles */
+  hr {
+    border: none;
+    height: 1px;
+    background: var(--border-color);
+    margin: var(--space-8) 0;
+  }
+
+  /* Utility classes for spacing */
+  .space-y-1 > * + * { margin-top: var(--space-1); }
+  .space-y-2 > * + * { margin-top: var(--space-2); }
+  .space-y-3 > * + * { margin-top: var(--space-3); }
+  .space-y-4 > * + * { margin-top: var(--space-4); }
+  .space-y-6 > * + * { margin-top: var(--space-6); }
+  .space-y-8 > * + * { margin-top: var(--space-8); }
+
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    html {
+      font-size: 15px;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+    }
+
+    h3 {
+      font-size: 1.375rem;
+    }
+  }
+
+  /* Print styles */
+  @media print {
+    * {
+      background: white !important;
+      color: black !important;
+      box-shadow: none !important;
+    }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    :root {
+      --border-color: #000000;
+      --text-secondary: #000000;
+    }
+
+    [data-theme="dark"] {
+      --border-color: #ffffff;
+      --text-secondary: #ffffff;
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}

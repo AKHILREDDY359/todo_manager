@@ -1,0 +1,441 @@
+/* DateTasks Page Styles */
+
+.date-tasks-container {
+  min-height: 100vh;
+  padding-top: calc(64px + var(--space-8));
+  background: var(--background-color);
+  width: 100%;
+}
+
+.date-tasks-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* Header Section */
+.date-tasks-header {
+  margin-bottom: var(--space-8);
+}
+
+.header-nav {
+  margin-bottom: var(--space-6);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.back-link:hover {
+  color: var(--text-primary);
+  background: var(--surface-color);
+}
+
+.date-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-6);
+}
+
+.date-main {
+  flex: 1;
+}
+
+.date-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+.date-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid;
+}
+
+.date-badge.today {
+  background: var(--notion-blue-light);
+  color: var(--notion-blue);
+  border-color: var(--notion-blue);
+}
+
+.date-badge.past {
+  background: var(--notion-red-light);
+  color: var(--notion-red);
+  border-color: var(--notion-red);
+}
+
+.date-badge.future {
+  background: var(--notion-green-light);
+  color: var(--notion-green);
+  border-color: var(--notion-green);
+}
+
+.add-task-btn {
+  white-space: nowrap;
+  min-width: 180px;
+}
+
+/* Section Styles */
+.main-tasks-section {
+  margin-bottom: var(--space-12);
+}
+
+.section-header {
+  margin-bottom: var(--space-6);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.task-count {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.tasks-container {
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: var(--space-16) var(--space-8);
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  color: var(--text-secondary);
+}
+
+.empty-icon {
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-6);
+  opacity: 0.6;
+}
+
+.empty-state h3 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+  font-weight: 600;
+}
+
+.empty-state p {
+  font-size: 0.875rem;
+  margin-bottom: var(--space-8);
+  color: var(--text-secondary);
+}
+
+/* Context Sections */
+.context-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.context-section {
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+.context-section.overdue {
+  border-color: var(--notion-red);
+  background: var(--notion-red-light);
+}
+
+.context-section.upcoming {
+  border-color: var(--notion-blue);
+  background: var(--notion-blue-light);
+}
+
+.context-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+  color: var(--text-primary);
+}
+
+.context-section.overdue .context-title {
+  color: var(--notion-red);
+}
+
+.context-section.upcoming .context-title {
+  color: var(--notion-blue);
+}
+
+.context-tasks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.context-task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3);
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.context-task:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+.task-title {
+  font-weight: 500;
+  color: var(--text-primary);
+  flex: 1;
+}
+
+.task-date {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.context-more {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  text-align: center;
+  padding: var(--space-2);
+}
+
+/* Error State */
+.error-state {
+  text-align: center;
+  padding: var(--space-16) var(--space-8);
+  color: var(--text-secondary);
+}
+
+.error-icon {
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-6);
+  opacity: 0.6;
+}
+
+.error-state h2 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+  font-weight: 600;
+}
+
+.error-state p {
+  font-size: 1rem;
+  margin-bottom: var(--space-8);
+  color: var(--text-secondary);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--space-4);
+  animation: overlayFadeIn 0.2s ease-out;
+}
+
+.modal-content {
+  background: var(--card-background);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: modalSlideIn 0.2s ease-out;
+  border: 1px solid var(--border-color);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .date-tasks-container {
+    padding-top: calc(64px + var(--space-4));
+  }
+
+  .date-tasks-content {
+    padding: 0 var(--space-4);
+  }
+
+  .date-info {
+    flex-direction: column;
+    gap: var(--space-4);
+    align-items: stretch;
+  }
+
+  .date-title {
+    font-size: 2rem;
+  }
+
+  .add-task-btn {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .context-sections {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .context-task {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .task-date {
+    align-self: flex-end;
+  }
+
+  .modal-overlay {
+    padding: var(--space-2);
+  }
+
+  .modal-content {
+    border-radius: var(--radius-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .date-tasks-content {
+    padding: 0 var(--space-3);
+  }
+
+  .date-title {
+    font-size: 1.75rem;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  .context-section {
+    padding: var(--space-4);
+  }
+
+  .empty-state {
+    padding: var(--space-12) var(--space-4);
+  }
+}
+
+/* Dark Mode Adjustments */
+[data-theme="dark"] .date-badge.today {
+  background: rgba(46, 167, 224, 0.2);
+  color: #60a5fa;
+}
+
+[data-theme="dark"] .date-badge.past {
+  background: rgba(255, 87, 87, 0.2);
+  color: #f87171;
+}
+
+[data-theme="dark"] .date-badge.future {
+  background: rgba(140, 193, 82, 0.2);
+  color: #84cc16;
+}
+
+[data-theme="dark"] .context-section.overdue {
+  background: rgba(255, 87, 87, 0.1);
+}
+
+[data-theme="dark"] .context-section.upcoming {
+  background: rgba(46, 167, 224, 0.1);
+}
+
+/* Print Styles */
+@media print {
+  .date-tasks-container {
+    background: white;
+    color: black;
+  }
+
+  .header-nav,
+  .add-task-btn,
+  .modal-overlay {
+    display: none;
+  }
+
+  .context-sections {
+    grid-template-columns: 1fr;
+  }
+}
