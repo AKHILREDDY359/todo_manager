@@ -1,9 +1,6 @@
 /* Import Notion's Inter font first */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* Import custom styles */
-@import './styles/main.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
